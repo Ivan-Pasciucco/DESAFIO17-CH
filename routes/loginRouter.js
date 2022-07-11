@@ -45,7 +45,7 @@ router.get('/logout',(req, res) => {
         if (err) { 
             res.send({status: 'logout error'});
         }else{
-            res.render('pages/logout',{nombre});
+            res.render('pages/logOut',{nombre});
         }
     });
 });
