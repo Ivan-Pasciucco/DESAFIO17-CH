@@ -3,7 +3,7 @@ const router = express.Router();
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const connectMongo = require('connect-mongo');
-const passport = require('../DB/configPassport');
+const passport = require('../db/configPassport');
 require('dotenv').config();
 
 router.use(cookieParser());

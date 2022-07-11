@@ -3,7 +3,7 @@ const router = express.Router();
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const connectMongo = require('connect-mongo');
-const passport = require('../DB/configPassport');
+const passport = require('../db/configPassport');
 require('dotenv').config();
 
 router.use(cookieParser());
@@ -45,7 +45,7 @@ router.get('/logout',(req, res) => {
         if (err) { 
             res.send({status: 'logout error'});
         }else{
-            res.render('pages/logOut',{nombre});
+            res.render('pages/logout',{nombre});
         }
     });
 });

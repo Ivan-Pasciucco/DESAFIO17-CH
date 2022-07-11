@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const {fork} = require('child_process');
-const Random = require('../js/randoms');
+const Random = require('../utils/randoms');
 const random = new Random();
 
 router.get('/',(req, res) => {
