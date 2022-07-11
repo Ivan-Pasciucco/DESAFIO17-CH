@@ -20,8 +20,6 @@ router.use(session({
 router.use(passport.initialize());
 router.use(passport.session());
 
-
-// Rutas---------------------------------------------------------------------------------------------------
 router.get('/',(req, res) => {
     if(req.isAuthenticated()){
         res.redirect('/')

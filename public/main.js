@@ -1,7 +1,5 @@
 const socket = io.connect();
 
-// tabla productos faker
-// ---------------------------------------------------------------------------------------------------------------------------------------
 
 socket.on('productosFaker', data => {
     render(data);
@@ -20,12 +18,8 @@ function render(data) {
     .join(' ');
     const tableComplete = table + html;
     document.getElementById('productos').innerHTML = tableComplete;
-    
+
 }
-
-// chat
-// -----------------------------------------------------------------------------------------------------------------------------------------
-
 const formChat = document.getElementById('formChat');
 formChat.addEventListener('submit',(e) => {
     e.preventDefault();
@@ -41,7 +35,6 @@ formChat.addEventListener('submit',(e) => {
             avatar: document.getElementById('avatar').value
         },
         text: document.getElementById('texto').value,
-                // id: Date.now(),
         fyh: `${fyh.getDate()}/${(fyh.getMonth() + 1)}/${fyh.getFullYear()} ${fyh.getHours()}:${fyh.getMinutes()}:${fyh.getSeconds()}`
     };
 
@@ -60,7 +53,6 @@ formChat.addEventListener('submit',(e) => {
     });
     document.getElementById('texto').value = '';
 });
-
 socket.on('historialChat', data => {
     if(data.length !== 0){
         const html = data

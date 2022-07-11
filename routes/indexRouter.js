@@ -18,10 +18,9 @@ router.use(session({
   saveUninitialized: true
 }));
 router.use(passport.initialize());
-router.use(passport.session());
+router.use(passport.session(
 
-
-// Ruta--------------------------------------------------------------------
+));
 router.get('/',(req, res) => {
   if(req.isAuthenticated()){
     res.render('pages/index',{nombre : req.session.passport.user});

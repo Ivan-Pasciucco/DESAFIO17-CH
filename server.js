@@ -31,7 +31,7 @@ app.use("/login", loginRouter);
 app.use("/", indexRouter);
 app.use("/register", registerRouter);
 app.use("/info", infoRouter);
-app.use("/api/randoms", randomsRouter);
+//app.use("/api/randoms", randomsRouter);
 
 io.on("connection", async (socket) => {
   console.log("Usuario conectado");
